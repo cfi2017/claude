@@ -31,7 +31,6 @@ const PrometheusMetricsAnalyzer = () => {
     const types = new Set(['all']);
     let currentMetric = null;
     let currentHelp = '';
-    let currentType = '';
     
     // Process each line
     for (let i = 0; i < lines.length; i++) {
@@ -53,7 +52,6 @@ const PrometheusMetricsAnalyzer = () => {
         const parts = line.substring(7).split(' ');
         const metricName = parts[0];
         const metricType = parts[1];
-        currentType = metricType;
         
         // Add to unique metric types
         types.add(metricType);
